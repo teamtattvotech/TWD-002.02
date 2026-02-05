@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lush Layers — Premium Pillows</title>
+
+  <!-- SEO META TAGS -->
+  <meta name="description" content="Lush Layers — Premium handcrafted pillows designed for comfort, support, and elegance. Explore sleep, travel, and décor collections.">
+  <meta name="keywords" content="pillows, premium pillows, orthopedic pillows, memory foam, decor cushions, travel pillows, bamboo pillow, lush layers">
+  <meta name="author" content="Lush Layers LLP">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (for social previews) -->
+  <meta property="og:title" content="Lush Layers — Premium Comfort Pillows">
+  <meta property="og:description" content="Experience luxury, comfort, and craftsmanship in every layer. Discover our premium pillow collections.">
+  <meta property="og:image" content="https://teamtattvotech.github.io/LUSH-LAYERS/assets/images/logo/logo.png">
+  <meta property="og:url" content="https://teamtattvotech.github.io/LUSH-LAYERS/">
+  <meta property="og:type" content="website">
+
+  <!-- Performance -->
+  <link rel="preload" href="assets/videos/bgvideo1.webm" as="video" type="video/webm">
+  <link rel="preload" href="assets/images/logo/logo.webp" as="image">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_io/apple-touch-icon.webp">
+  <link rel="icon" type="image/webp" sizes="32x32" href="assets/images/favicon_io/favicon-32x32.webp">
+  <link rel="icon" type="image/webp" sizes="16x16" href="assets/images/favicon_io/favicon-16x16.webp">
+  <link rel="manifest" href="assets/images/favicon_io/site.webmanifest">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP (single include) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Styles (local) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="w-full fixed top-0 left-0 z-50 px-4 md:px-6">
+  <div class="max-w-6xl mx-auto header-pill flex items-center justify-between relative">
+    
+    <!-- LOGO + BRAND -->
+    <a href="#home" class="flex items-center gap-2 align-middle ">
+      <img 
+        src="assets/images/logo/logo.webp" 
+        alt="Lush Layers Logo" 
+        class="w-14 h-14 object-contain rounded-full border border-[rgba(15,61,62,0.06)] bg-gradient-to-br from-[#fff7e6] to-[#f3e6c2] p-1 inline-block align-middle"
+      />
+      <span class="text-base font-semibold text-[var(--teal)] font-serif md:text-lg relative top-[1px]">Lush Layers</span>
+    </a>
+
+    <nav id="desktopNav" class="hidden md:flex gap-6 items-center text-sm text-[var(--muted)]">
+      <a href="#home" class="hover:underline">Home</a>
+      <a href="#about" class="hover:underline">About</a>
+      <a href="#collections" class="hover:underline">Collections</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </nav>
+
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#contact" class="px-4 py-2 rounded-full" style="background: linear-gradient(90deg,var(--gold), #ffd991); color:var(--teal); font-weight:600;">Enquire</a>
+    </div>
+
+    <div class="md:hidden">
+      <button id="mobileToggle" class="p-1.5 rounded-md border border-transparent bg-white/50" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation menu">
+        <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <svg id="closeIcon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-nav-overlay hidden md:hidden">
+      <nav class="flex flex-col gap-6 items-start text-lg text-[var(--muted)] font-medium">
+        <a href="#home" class="hover:text-[var(--teal)]">Home</a>
+        <a href="#about" class="hover:text-[var(--teal)]">About</a>
+        <a href="#collections" class="hover:text-[var(--teal)]">Collections</a>
+        <a href="#contact" class="hover:text-[var(--teal)]">Contact & Support</a>
+      </nav>
+      <a href="#collections" class="mt-8 px-5 py-2.5 rounded-full w-full block text-center text-base" style="background: linear-gradient(90deg,var(--gold), #ffd991); color:var(--teal); font-weight:600;">Shop All Pillows</a>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</header>
+
+<main class="pt-0">
+
+  <!-- ================= HERO (from index.html) ================= -->
+  <section id="home" class="hero-wrap relative overflow-hidden pt-[4rem] md:pt-[5rem]">
+    <!-- Background Video -->
+    <div class="absolute inset-0 w-full h-full overflow-hidden">
+      <video id="heroVideo" autoplay muted loop playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover">
+        <source src="assets/videos/bgvideo1.webm" type="video/webm">
+        <source src="assets/videos/bgvideo1.mp4" type="video/mp4">
+      </video>
+
+      <!-- gif fallback; initially hidden and shown by JS if video fails -->
+      <img id="heroGif" src="assets/videos/bgvideo1.gif" alt="Background animation" class="absolute inset-0 w-full h-full object-cover hidden" loading="lazy" />
+    </div>
+
+    <script>
+      // If video fails to load or cannot play, show gif fallback
+      (function () {
+        const vid = document.getElementById('heroVideo');
+        const gif = document.getElementById('heroGif');
+        if (!vid) return;
+
+        vid.addEventListener('error', () => {
+          vid.style.display = 'none';
+          gif.classList.remove('hidden');
+        });
+
+        vid.addEventListener('play', () => {
+          gif.classList.add('hidden');
+          vid.style.display = 'block';
+        });
+
+        vid.addEventListener('pause', () => {
+          if (vid.currentTime < 0.1) {
+            vid.style.display = 'none';
+            gif.classList.remove('hidden');
+          }
+        });
+
+        setTimeout(() => {
+          if (vid.readyState < 3) {
+            vid.style.display = 'none';
+            gif.classList.remove('hidden');
+          }
+        }, 1500);
+      })();
+    </script>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/10 z-0"></div>
+
+    <!-- Decorative Blobs -->
+    <div class="blob absolute" style="width:260px;height:260px;background:rgba(212,175,55,0.14);left:6%;top:12%;"></div>
+    <div class="blob absolute" style="width:220px;height:220px;background:rgba(15,61,62,0.06);right:8%;top:24%;"></div>
+
+    <!-- Hero Content -->
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- Left Column -->
+        <div class="col-span-12 lg:col-span-7 hero-left mt-10 md:mt-12">
+          <h1 class="mb-4 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)]">LUSH<br/>LAYERS</h1>
+          <p class="hero-sub text-base mb-6 text-white/90">
+            Soft and stylish pillows — premium fabrics, considered craft. 
+            Specialised support options crafted for sleep posture, travel and therapeutic comfort.
+          </p>
+
+          <div class="flex gap-4 items-center mb-10">
+            <a href="#collections" class="px-6 py-3 rounded-full text-white font-semibold text-sm shadow-md" style="background:var(--teal);">
+              Explore the Collection
+            </a>
+            <a href="#contact" class="text-sm text-white/90 hover:underline">Enquire →</a>
+          </div>
+
+          <div class="relative w-full mb-8">
+            <div class="feature-card w-full relative z-10 bg-white/70 backdrop-blur-sm rounded-lg p-3">
+              <img src="assets/images/backgrounds/bento-bg.webp" alt="Pillow detail" class="w-full h-48 object-cover rounded-lg mb-3">
+              <h3 class="text-lg font-semibold text-[var(--teal)]">Premium Detail</h3>
+              <p class="text-sm text-[var(--muted)]/90 mt-1">
+                High-resolution detail — stitch, fill and finish shown true-to-life.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-3 bg-white/80 backdrop-blur-sm rounded-xl border border-[rgba(15,61,62,0.03)]">
+              <h4 class="font-semibold text-[var(--teal)] text-sm">Soft & Supportive</h4>
+              <p class="text-xs text-[var(--muted)]/90 mt-1">Balanced loft with adaptive fills for a restful night.</p>
+            </div>
+            <div class="p-3 bg-white/80 backdrop-blur-sm rounded-xl border border-[rgba(15,61,62,0.03)]">
+              <h4 class="font-semibold text-[var(--teal)] text-sm">Breathable & Pure</h4>
+              <p class="text-xs text-[var(--muted)]/90 mt-1">Natural fibres, moisture-wicking covers for freshness.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="hidden lg:block lg:col-span-5 relative mt-12">
+          <div class="flex flex-col gap-6 items-end hero-feature-wrap">
+            <div class="feature-card w-full lg:w-[380px] bg-white/80 backdrop-blur-sm rounded-lg p-3">
+              <img src="assets/images/backgrounds/hero-bg.webp" alt="Pillow detail" class="w-full h-40 object-cover rounded-lg mb-3">
+              <h3 class="text-lg font-semibold text-[var(--teal)]">Pillow detail</h3>
+              <p class="text-sm text-[var(--muted)]/90 mt-1">High-resolution detail — stitch, fill and finish shown true-to-life.</p>
+            </div>
+            <div class="feature-card w-[260px] bg-white/80 backdrop-blur-sm rounded-lg p-3">
+              <img src="assets/images/backgrounds/hero-pattern.webp" alt="Fabric" class="w-full h-28 object-cover rounded-md mb-3">
+              <h4 class="text-sm font-semibold text-[var(--teal)]">Fabric texture</h4>
+              <p class="text-xs text-[var(--muted)]/90 mt-1">Soft woven surface with superior hand-feel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- HERO END -->
+
+  <!-- ================= FEATURES BLOCK (from index.html) ================= -->
+  <section id="pillow-features" class="py-20 bg-white/80 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Feature 1 -->
+      <div class="grid md:grid-cols-2 gap-10 items-center mb-20">
+        <!-- Text Left -->
+        <div class="reveal-left flex flex-col gap-4 order-2 md:order-1">
+          <h3 class="text-2xl font-semibold text-[var(--teal)] font-serif">
+            Adaptive Comfort Design
+          </h3>
+          <p class="text-[var(--muted)]/90 text-sm leading-relaxed">
+            Engineered with layered construction that adapts to your posture and pressure points. 
+            The pillow gently adjusts to your body for balanced alignment and deeper rest.
+          </p>
+        </div>
+
+        <!-- Image Right -->
+        <div class="reveal-right order-1 md:order-2">
+          <img src="assets/images/features/features.webp" 
+            alt="Adaptive Comfort Design" 
+            class="w-full h-64 object-cover rounded-xl shadow-md">
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <!-- Image Left -->
+        <div class="reveal-left">
+          <img src="assets/images/features/features2.webp" 
+            alt="Breathable Comfort" 
+            class="w-full h-64 object-cover rounded-xl shadow-md">
+        </div>
+
+        <!-- Text Right -->
+        <div class="reveal-right flex flex-col gap-4">
+          <h3 class="text-2xl font-semibold text-[var(--teal)] font-serif">
+            Breathable and Cooling Layers
+          </h3>
+          <p class="text-[var(--muted)]/90 text-sm leading-relaxed">
+            Designed with open-cell structure and moisture-wicking covers to 
+            regulate temperature and airflow — keeping you cool and fresh all night long.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BRAND — Creative Collage + Mission cards (from index.html) ===== -->
+  <section id="brand-creative" class="brand-creative">
+    <div class="brand-inner max-w-6xl">
+      <div class="brand-grid">
+
+        <!-- LEFT: Collage -->
+        <div class="brand-collage" aria-hidden="false">
+          <div class="collage-stage" id="collage-stage">
+            <img src="assets/images/collections/baby-pillow.webp" alt="" class="collage-img layer layer-1">
+            <img src="assets/images/collections/bamboo-charcoal.webp" alt="" class="collage-img layer layer-2">
+            <img src="assets/images/collections/bubble-pillow.webp" alt="" class="collage-img layer layer-3">
+            <div class="collage-frame"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Title + Missions -->
+        <div class="brand-content">
+          <h2 class="brand-title">Brand identity & mission</h2>
+          <p class="brand-sub">
+            <strong>LUSH LAYERS</strong> blends thoughtful engineering, breathable materials and everyday
+            elegance — design that supports rest and wellbeing.
+          </p>
+
+          <div class="mission-cards">
+            <article class="mission-card">
+              <div class="mc-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#D4AF37" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+              </div>
+              <div class="mc-body">
+                <h4>To simplify daily life</h4>
+                <p>Practical modular design built around people’s movement and rest patterns.</p>
+              </div>
+            </article>
+
+            <article class="mission-card">
+              <div class="mc-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#D4AF37" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+              </div>
+              <div class="mc-body">
+                <h4>To elevate comfort & wellness</h4>
+                <p>Layered support, breathable surfaces and validated comfort profiles.</p>
+              </div>
+            </article>
+
+            <article class="mission-card">
+              <div class="mc-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#D4AF37" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+              </div>
+              <div class="mc-body">
+                <h4>To deliver user-centric innovation</h4>
+                <p>Small details, durable materials, and features that genuinely help people sleep better.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="brand-cta-row">
+            <a href="#about" class="btn btn-primary brand-cta-btn">
+              Our story & values →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT (from about.html) ================= -->
+  <section id="about" class="pt-24 pb-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <div class="col-span-12 lg:col-span-7">
+          <div class="relative" style="min-height:320px;">
+            <div style="position:absolute; left:0; top:8%; width:46%; transform: rotate(-3deg);">
+              <img src="assets/images/about/about4.webp" loading="lazy" alt="about1" class="w-full h-48 object-cover rounded-lg shadow-lg">
+            </div>
+            <div style="position:absolute; left:34%; top:0; width:46%; transform: rotate(2deg);">
+              <img src="assets/images/about/about3.webp" loading="lazy" alt="about2" class="w-full h-48 object-cover rounded-lg shadow-lg">
+            </div>
+            <div style="position:absolute; left:8%; top:50%; width:46%; transform: rotate(1deg);">
+              <img src="assets/images/about/about2.webp" loading="lazy" alt="about3" class="w-full h-48 object-cover rounded-lg shadow-lg">
+            </div>
+            <div style="position:absolute; left:52%; top:58%; width:40%; transform: rotate(-1deg);">
+              <img src="assets/images/about/about1.webp" loading="lazy" alt="about4" class="w-full h-40 object-cover rounded-lg shadow-lg">
+            </div>
+          </div>
+        </div>
+          
+        <div class="col-span-12 lg:col-span-5">
+          <h2 class="text-3xl font-bold text-[var(--teal)] font-serif mb-4">About</h2>
+          <p class="text-[var(--muted)]/90 mb-4 text-sm">
+               At LUSH LAYERS, we are redefining modern living through innovative, user-focused products designed to simplify, support, and elevate everyday experiences. 
+               Rooted in a philosophy of purposeful design, our mission is to craft seamless solutions that not only serve functional needs but also bring comfort, elegance, and efficiency into every layer of daily life.
+          </p>
+
+          <p class="text-[var(--muted)]/80 mb-4 text-sm">From smart home essentials and workspace innovations to travel-ready conveniences, our portfolio spans a diverse range of products that embody intelligent design and intuitive usability. Each offering is carefully developed with a deep understanding of modern lifestyles—blending form and function to integrate effortlessly into routines, environments, and aspirations.
+              What sets us apart is our commitment to user empowerment. We don’t just create products—we build experiences that improve quality of life. Whether enhancing your home’s ambiance, streamlining work tasks, or supporting you on the move, LUSH LAYERS is your partner in living smarter and better.
+          </p>
+          <a href="#collections" class="inline-block px-5 py-2 rounded-md text-sm" style="border:1px solid rgba(0,0,0,0.08); background: #ffffff;">See Collection</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values (from about.html) -->
+  <section id="core-values" class="py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h3 class="text-2xl font-serif font-semibold text-[var(--teal)] mb-6">Core Values</h3>
+      <div class="values-row"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Item 1 -->
+        <div class="core-card p-4 rounded-lg bg-white/90 shadow-sm flex flex-col items-start gap-3">
+          <div class="icon-wrap p-3 rounded-md" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#d4af37" stroke-width="1.5" fill="rgba(212,175,55,0.06)"/>
+              <path d="M8 13l2 2 6-6" stroke="#0f3d3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h4 class="text-sm font-semibold text-[var(--teal)]">Innovation</h4>
+          <p class="text-[var(--muted)]/80 text-xs hero-sub">Class apart: modern thinking meets practical product engineering.</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="core-card p-4 rounded-lg bg-white/90 shadow-sm flex flex-col items-start gap-3">
+          <div class="icon-wrap p-3 rounded-md" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#d4af37" stroke-width="1.5" fill="rgba(212,175,55,0.06)"/>
+              <path d="M12 7a3 3 0 100 6 3 3 0 000-6z" stroke="#0f3d3e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 17c1.5-2 4.5-3 6-3s4.5 1 6 3" stroke="#0f3d3e" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h4 class="text-sm font-semibold text-[var(--teal)]">Human-Centric Design</h4>
+          <p class="text-[var(--muted)]/80 text-xs hero-sub">We design products around how people live, move and rest.</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="core-card p-4 rounded-lg bg-white/90 shadow-sm flex flex-col items-start gap-3">
+          <div class="icon-wrap p-3 rounded-md" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#d4af37" stroke-width="1.5" fill="rgba(212,175,55,0.06)"/>
+              <rect x="7.5" y="8.5" width="9" height="7" rx="1.2" stroke="#0f3d3e" stroke-width="1.4"/>
+              <path d="M9 11.5h6" stroke="#0f3d3e" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h4 class="text-sm font-semibold text-[var(--teal)]">Function + Beauty</h4>
+          <p class="text-[var(--muted)]/80 text-xs hero-sub">Where practical purpose and elegant form coexist seamlessly.</p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="core-card p-4 rounded-lg bg-white/90 shadow-sm flex flex-col items-start gap-3">
+          <div class="icon-wrap p-3 rounded-md" aria-hidden="true">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#d4af37" stroke-width="1.5" fill="rgba(212,175,55,0.06)"/>
+              <path d="M7 12h10" stroke="#0f3d3e" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M9 8v8" stroke="#0f3d3e" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M15 8v8" stroke="#0f3d3e" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h4 class="text-sm font-semibold text-[var(--teal)]">Sustainability</h4>
+          <p class="text-[var(--muted)]/80 text-xs hero-sub">Materials and processes that respect people and planet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- ================================
+     FEATURES SECTION (Grid + Composition)
+================================ -->
+<section id="features-section" class="features-section py-12 bg-[var(--cream-1)]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="lg:flex lg:gap-10 lg:items-start">
+
+      <!-- Left column: heading + info box -->
+      <div class="lg:w-5/12">
+        <h2 id="features-title" class="text-3xl font-serif font-semibold text-[var(--teal)] mb-4">Features of our products</h2>
+
+        <aside class="features-info-box bg-white/90 rounded-lg p-6 shadow-sm border border-[rgba(15,61,62,0.03)] mb-6">
+          <h3 class="fib-heading text-lg font-semibold text-[var(--teal)] mb-3">Why our design matters</h3>
+          <ul class="fib-list list-none space-y-2 text-sm text-[var(--muted)]/90 mb-3">
+            <li><strong>Ergonomic shape</strong> — engineered for posture & pressure relief</li>
+            <li><strong>Temperature control</strong> — breathable layers that improve airflow</li>
+            <li><strong>Premium materials</strong> — memory foam & hypoallergenic covers</li>
+            <li><strong>Multi-use</strong> — sleeping, travel, pregnancy & everyday comfort</li>
+          </ul>
+          <p class="fib-note text-sm text-[var(--muted)]/80 mb-4">Clean, modern, and balanced — the bubbles show product themes; this panel gives context at a glance.</p>
+          <a class="fib-cta inline-block text-sm font-medium px-4 py-2 rounded-md border border-[rgba(0,0,0,0.06)] bg-white" href="#collections">Explore collections →</a>
+        </aside>
+      </div>
+
+      <!-- Right column: composition circle + bubbles -->
+      <div class="lg:w-7/12 relative">
+        <div class="features-composition relative w-full h-[420px] flex items-center justify-center">
+          <!-- central circle -->
+          <div id="featuresCircle" class="features-circle w-100 h-100 rounded-full flex items-center justify-center overflow-hidden shadow-md border border-[rgba(15,61,62,0.05)]">
+            <img src="assets/images/backgrounds/hero-pattern.webp" alt="center" class="w-full h-full object-cover" />
+          </div>
+
+          <!-- Bubbles (absolute positioned; JS/CSS arrange by data-angle if you already have it) -->
+          <div class="feature-bubble absolute text-center w-36 p-3 rounded-xl bg-white/90 shadow-sm" style="transform: translate(-220px,-120px);">
+            <img src="assets/images/about/icons/I5.webp" alt="" class="mx-auto w-10 h-10 mb-3">
+            <h4 class="text-sm font-semibold text-[var(--teal)]">Ergonomic Support</h4>
+            <p class="text-xs text-[var(--muted)]/80">Orthopedic shape & pressure relief</p>
+          </div>
+
+          <div class="feature-bubble absolute text-center w-36 p-3 rounded-xl bg-white/90 shadow-sm" style="transform: translate(160px,-120px);">
+            <img src="assets/images/about/icons/I3.webp" alt="" class="mx-auto w-10 h-10 mb-3">
+            <h4 class="text-sm font-semibold text-[var(--teal)]">Cooling Tech</h4>
+            <p class="text-xs text-[var(--muted)]/80">Breathable grid & airflow</p>
+          </div>
+
+          <div class="feature-bubble absolute text-center w-36 p-3 rounded-xl bg-white/90 shadow-sm" style="transform: translate(200px,80px);">
+            <img src="assets/images/about/icons/I4.webp" alt="" class="mx-auto w-10 h-10 mb-3">
+            <h4 class="text-sm font-semibold text-[var(--teal)]">Premium Materials</h4>
+            <p class="text-xs text-[var(--muted)]/80">Memory foam & hypoallergenic covers</p>
+          </div>
+
+          <div class="feature-bubble absolute text-center w-36 p-3 rounded-xl bg-white/90 shadow-sm" style="transform: translate(-60px,170px);">
+            <img src="assets/images/about/icons/I1.webp" alt="" class="mx-auto w-10 h-10 mb-3">
+            <h4 class="text-sm font-semibold text-[var(--teal)]">Health & Wellness</h4>
+            <p class="text-xs text-[var(--muted)]/80">Pain relief & posture support</p>
+          </div>
+
+          <div class="feature-bubble absolute text-center w-36 p-3 rounded-xl bg-white/90 shadow-sm" style="transform: translate(-240px,60px);">
+            <img src="assets/images/about/icons/I2.webp" alt="" class="mx-auto w-10 h-10 mb-3">
+            <h4 class="text-sm font-semibold text-[var(--teal)]">Multi-purpose</h4>
+            <p class="text-xs text-[var(--muted)]/80">Sleep, travel & pregnancy</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end features -->
+
+  <!-- ================= COLLECTIONS (from collections.html) ================= -->
+  <section id="collections" class="pt-28 pb-16 md:pt-32">
+    <div class="container mx-auto px-4">
+      
+      <h2 class="text-3xl font-bold text-[var(--teal)] font-serif mb-4">Our Collections</h2>
+
+      <!-- Sleep Comfort Pillows (bento mosaic) -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-semibold text-[var(--teal)] mb-6">Sleep Comfort Pillows</h3>
+
+        <div class="bento-grid-custom">
+          <!-- BIG (left, spans row 1-2) -->
+          <div class="product-card tile-big" data-key="wedgepillow"
+            data-title="Wedge Pillow"
+             data-description="A Wedge Pillow is a triangular-shaped cushion designed to elevate the upper or lower body during sleep or relaxation. It helps relieve a variety of health issues such as acid reflux, snoring, poor circulation, back pain, and post-surgery discomfort. Whether you place it behind your back, under your knees, or use it to sit up in bed, a wedge pillow offers ergonomic support that promotes comfort, recovery, and better sleep posture."
+             data-images="
+                assets/images/collection(1)/Wedge/W1.webp,
+                assets/images/collection(1)/Wedge/W2.webp,
+                assets/images/collection(1)/Wedge/W3.webp
+             ">
+            <div class="product-media">
+              <img src="assets/images/collection(1)/Wedge/W4.webp" alt="Wedge Pillow" loading="lazy">
+            </div>
+            <h4 class="tile-title">Wedge Pillow</h4>
+          </div>
+
+          <!-- A (top middle) -->
+          <div class="product-card tile-a" data-key="neckrest"
+            data-title="Cuddle Pillow"
+             data-description="A Cuddle Pillow is designed for one thing: maximum coziness. Whether you’re curling up for a nap, watching a movie, or drifting off to sleep, a cuddle pillow offers the soft, supportive comfort that makes snuggling irresistible. These pillows are typically longer or uniquely shaped to accommodate close hugging and body support — perfect for solo sleepers, couples, or anyone who loves to cuddle up in bed."
+             data-images="
+                assets/images/collection(1)/Cuddle/C1.webp,
+                assets/images/collection(1)/Cuddle/C2.webp,
+                assets/images/collection(1)/Cuddle/C3.webp
+             ">
+            <div class="product-media">
+              <img src="assets/images/collection(1)/Cuddle/C4.webp" alt="Cuddle Pillow" loading="lazy">
+            </div>
+            <h4 class="tile-title">Cuddle Pillow</h4>
+          </div>
+
+          <!-- B (top-right, spans row 1-2) -->
+          <div class="product-card tile-b" data-key="orthosupport"
+            data-title="Anti-Snoring Orthopedic Pillow"
+             data-description="An Anti-Snoring Orthopedic Pillow is a specially designed sleep aid that promotes better breathing and spinal alignment during sleep. Its contoured, ergonomic shape helps keep your head and neck in an optimal position, reducing airway obstruction—a common cause of snoring. By improving posture and supporting the upper body, it naturally reduces snoring, enhances comfort, and helps both you and your partner sleep more peacefully."
+             data-images="
+                assets/images/collection(1)/Anti-Snoring Orthopedic/A2.webp,
+                assets/images/collection(1)/Anti-Snoring Orthopedic/A3.webp,
+                assets/images/collection(1)/Anti-Snoring Orthopedic/A4.webp
+             ">
+            <div class="product-media">
+              <img src="assets/images/collection(1)/Anti-Snoring Orthopedic/A1.webp" alt="Anti-Snoring Orthopedic Pillow" loading="lazy">
+            </div>
+            <h4 class="tile-title">Anti-Snoring Orthopedic Pillow</h4>
+          </div>
+
+          <!-- C (middle middle, row 2) -->
+          <div class="product-card tile-c" data-key="bubble"
+            data-title="Bubble Pillow"
+             data-description="A Bubble Pillow is a modern, innovative type of pillow designed with a unique structure that mimics the shape of soft, fluffy bubbles or clusters. These pillows are often made from specialized materials like memory foam, microbeads, or even gel, and are intended to provide a distinct and supportive sleeping experience. The “bubble” design allows for better airflow and adaptive support, which can improve both comfort and sleep quality."
+             data-images="
+                assets/images/collection(1)/Bubble/B1.webp,
+                assets/images/collection(1)/Bubble/B2.webp,
+                assets/images/collection(1)/Bubble/B3.webp
+             ">
+            <div class="product-media">
+              <img src="assets/images/collection(1)/Bubble/B4.webp" alt="Bubble Pillow" loading="lazy">
+            </div>
+            <h4 class="tile-title">Bubble Pillow</h4>
+          </div>
+
+          <!-- D (bottom-left, row 3 col1) -->
+          <div class="product-card tile-d" data-key="butterfly"
+            data-title="Butterfly Pillow"
+             data-description="A Butterfly Pillow is an ergonomically shaped pillow designed to cradle your head, neck, and shoulders while promoting natural spinal alignment. Named for its distinctive butterfly-like shape, this pillow features contoured wings that support various sleep positions—especially side and back sleeping—helping relieve pressure, reduce tension, and enhance overall sleep comfort. Whether you’re looking for pain relief, better posture, or improved sleep quality, the Butterfly Pillow is a smart, supportive choice."
+             data-images="
+                assets/images/collection(1)/Butterfly/BU1.webp,
+                assets/images/collection(1)/Butterfly/BU2.webp,
+                assets/images/collection(1)/Butterfly/BU3.webp
+             ">
+            <div class="product-media">
+              <img src="assets/images/collection(1)/Butterfly/BU4.webp" alt="Butterfly Pillow" loading="lazy">
+            </div>
+            <h4 class="tile-title">Butterfly Pillow</h4>
+          </div>
+
+          <!-- E (bottom-middle, row 3 col2) -->
+          <div class="product-card tile-e" data-key="compact"
+            data-title="Grid Cooling Pillow"
+             data-description="A Grid Cooling Pillow is an innovative sleep solution designed to keep you cool, supported, and comfortable throughout the night. It features a unique grid structure—often made from hyper-elastic polymers or ventilated gel—that promotes maximum airflow and evenly distributes pressure. This pillow is ideal for hot sleepers or anyone seeking cool, breathable comfort without sacrificing neck and spinal support."
+             data-images="
+                assets/images/collection(1)/Grid Cooling/G2.webp,
+                assets/images/collection(1)/Grid Cooling/G3.webp,
+                assets/images/collection(1)/Grid Cooling/G4.webp
+             ">
+            <div class="product-media">
+              <img src="assets/images/collection(1)/Grid Cooling/G1.webp" alt="Grid Cooling Pillow" loading="lazy">
+            </div>
+            <h4 class="tile-title">Grid Cooling Pillow</h4>
+          </div>
+
+          <!-- F (bottom-right, row 3 col3) -->
+          <div class="product-card tile-f" data-key="coxy"
+             data-title="Deck Pillow"
+             data-description="A Deck Pillow for working on a bed with a laptop is a supportive, ergonomic cushion designed to turn your bed into a comfortable, posture-friendly workspace. It props up your back and provides a stable, cozy setup for typing, browsing, or video conferencing—perfect for remote workers, students, and creatives who love working in a relaxed setting"
+             data-images="
+                assets/images/collection(1)/Deck/D2.webp,
+                assets/images/collection(1)/Deck/D3.webp,
+                assets/images/collection(1)/Deck/D4.webp
+             ">
+            <div class="product-media">
+              <img src="assets/images/collection(1)/Deck/D1.webp" alt="Deck Pillow" loading="lazy">
+            </div>
+            <h4 class="tile-title">Deck Pillow</h4>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Ergonomic Support -->
+      <div class="mb-12" id="ergonomic-section">
+        <h3 class="text-2xl font-semibold text-[var(--teal)] mb-6">Ergonomic Support</h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="product-card p-4 cursor-pointer"
+            data-key="deckpillow"
+            data-title="Hand Support Pillow"
+            data-description="A Hand Support Pillow is a specialized cushion designed to provide comfort and relief for your hands, wrists, and forearms..."
+            data-images="assets/images/collection(1)/Hand Support/H1.webp, assets/images/collection(1)/Hand Support/H2.webp, assets/images/collection(1)/Hand Support/H3.webp">
+            
+            <div class="product-media rounded-md mb-3 overflow-hidden">
+              <img src="assets/images/collection(1)/Hand Support/H4.webp" alt="Hand Support Pillow" loading="lazy">
+            </div>
+            <h4 class="font-semibold text-lg">Hand Support Pillow</h4>
+          </div>
+
+          <div class="product-card p-4 cursor-pointer"
+            data-key="lumbarcushion"
+            data-title="Back Support Lumbar Cushion"
+            data-description="A Back Support Lumbar Cushion is an ergonomically shaped cushion..."
+            data-images="assets/images/collection(1)/Back Support Lumbar Cushion/BS2.webp, assets/images/collection(1)/Back Support Lumbar Cushion/BS3.webp, assets/images/collection(1)/Back Support Lumbar Cushion/BS4.webp">
+
+            <div class="product-media rounded-md mb-3 overflow-hidden">
+              <img src="assets/images/collection(1)/Back Support Lumbar Cushion/BS1.webp" alt="Back Support Lumbar Cushion" loading="lazy">
+            </div>
+            <h4 class="font-semibold text-lg">Back Support Lumbar Cushion</h4>
+          </div>
+
+          <div class="product-card p-4 cursor-pointer"
+            data-key="coccyxcushion"
+            data-title="Coccyx Cushion"
+            data-description="A Coccyx Cushion is a specially designed seat cushion that helps relieve pressure on the tailbone..."
+            data-images="assets/images/collection(1)/Coccyx Cushion/CC2.webp, assets/images/collection(1)/Coccyx Cushion/CC3.webp, assets/images/collection(1)/Coccyx Cushion/CC4.webp">
+
+            <div class="product-media rounded-md mb-3 overflow-hidden">
+              <img src="assets/images/collection(1)/Coccyx Cushion/CC1.webp" alt="Coccyx Cushion" loading="lazy">
+            </div>
+            <h4 class="font-semibold text-lg">Coccyx Cushion</h4>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Pregnancy Care -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-semibold text-[var(--teal)] mb-6">Pregnancy Care</h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="product-card p-4 cursor-pointer" data-key="maternity"
+               data-title="Maternity Knee Support Pillow"
+         data-description="A Maternity Knee Support Pillow is a specially contoured cushion designed to be placed between the knees while sleeping on your side. It helps align the hips, reduce lower back and pelvic strain, and improve circulation—common concerns during pregnancy. Crafted to cradle the legs and relieve pressure on joints, this pillow is a must-have for expecting mothers seeking more restful and pain-free sleep."
+         data-images="
+            assets/images/collection(1)/Maternity Knee Support/M2.webp,
+            assets/images/collection(1)/Maternity Knee Support/M3.webp,
+            assets/images/collection(1)/Maternity Knee Support/M4.webp
+         ">
+            <div class="product-media rounded-md mb-3 overflow-hidden">
+              <img src="assets/images/collection(1)/Maternity Knee Support/M1.webp" alt="Maternity Knee Support Pillow" class="w-full h-56 object-cover" loading="lazy">
+            </div>
+            <h4 class="font-semibold text-lg">Maternity Knee Support Pillow</h4>
+          </div>
+
+          <div class="product-card p-4 cursor-pointer" data-key="maternity"
+              data-title="The Preggle Pregnancy Pillow"
+         data-description="The Preggle Pregnancy Pillow is a uniquely shaped maternity pillow designed to support your growing belly while relieving pressure on your back, hips, and legs. Unlike full-body pillows that take up extra space, the Preggle offers a compact, curved design that provides targeted support exactly where you need it. Perfect for side sleepers and expecting moms looking for a more restful, comfortable sleep throughout pregnancy."
+         data-images="
+            assets/images/collection(1)/The Preggle Pregnancy/P2.webp,
+            assets/images/collection(1)/The Preggle Pregnancy/P3.webp,
+            assets/images/collection(1)/The Preggle Pregnancy/P4.webp
+         ">
+            <div class="product-media rounded-md mb-3 overflow-hidden">
+              <img src="assets/images/collection(1)/The Preggle Pregnancy/P1.webp" alt="The Preggle Pregnancy Pillow" class="w-full h-56 object-cover" loading="lazy">
+            </div>
+            <h4 class="font-semibold text-lg">The Preggle Pregnancy Pillow</h4>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Baby Products -->
+      <div class="mb-12">
+        <h3 class="text-2xl font-semibold text-[var(--teal)] mb-6">Baby Products</h3>
+
+        <div class="max-w-site mx-auto">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="product-card p-4 cursor-pointer baby-product-card"
+                  data-title="Car-Shaped Baby Pillow"
+                   data-description=" A Car Shape Baby Pillow is a fun, uniquely designed baby head support cushion that combines playful aesthetics with gentle comfort. Styled like a cute little car, these pillows are specially crafted to cradle a baby’s head and neck while keeping them cozy and secure. Perfect for tummy time, naptime, stroller rides, or nursery decor, this pillow brings both function and charm to your baby’s everyday routine."
+                   data-images="
+                      assets/images/collection(1)/Car Shaped Baby Pillow/CB1.webp,
+                      assets/images/collection(1)/Car Shaped Baby Pillow/CB2.webp,
+                      assets/images/collection(1)/Car Shaped Baby Pillow/CB3.webp
+                   ">
+                <div class="product-media rounded-md mb-3 overflow-hidden">
+                  <img src="assets/images/collection(1)/Car Shaped Baby Pillow/CB4.webp" alt="Car-Shaped Baby Pillow" class="w-full h-56 object-cover" loading="lazy">
+                </div>
+                <h4 class="font-semibold text-lg">Car-Shaped Baby Pillow</h4>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-3xl font-serif font-semibold text-[var(--teal)] mb-4">Car-Shaped Baby Pillow</h4>
+              <p class="text-base hero-sub" style="max-width:680px; line-height:1.7; color:#4b5a56;">
+                A Car Shape Baby Pillow is a fun, uniquely designed baby head support cushion that combines playful 
+                aesthetics with gentle comfort. Styled like a cute little car, these pillows are specially crafted to 
+                cradle a baby’s head and neck while keeping them cozy and secure. Perfect for tummy time, naptime, 
+                stroller rides, or nursery decor, this pillow brings both function and charm to your baby’s everyday routine.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRODUCT POPUP MODAL (from collections.html) -->
+<div id="productPreviewModal" class="modal-backdrop hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+    
+    <div class="modal-card w-full max-w-4xl bg-white rounded-lg relative flex flex-col md:flex-row overflow-hidden shadow-2xl">
+
+      <div class="w-full md:w-1/2 modal-gallery-container bg-gray-100 relative h-64 md:h-auto shrink-0">
+        
+        <button class="modal-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white z-10 shadow-sm">❮</button>
+
+        <div class="modal-gallery w-full h-full flex items-center justify-center">
+            </div>
+
+        <button class="modal-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white z-10 shadow-sm">❯</button>
+      </div>
+
+
+      <div class="w-full md:w-1/2 p-6 flex flex-col overflow-y-auto max-h-[50vh] md:max-h-full relative">
+        
+        <button id="closeModalBtn" class="md:hidden absolute top-2 right-2 text-gray-400 hover:text-gray-600 p-2 z-20">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <h2 id="modalTitle" class="text-2xl font-serif text-[var(--teal)] mb-3 mt-2 md:mt-0">Product Title</h2>
+
+        <p id="modalDesc" class="text-sm text-[var(--muted)] leading-relaxed text-justify">
+          Description will appear here.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- ================= CONTACT (from contact.html) ================= -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-start">
+      
+      <!-- Left: Contact Info -->
+      <div>
+        <h2 class="text-3xl font-bold text-[var(--teal)] font-serif mb-6">Get in touch</h2>
+
+        <p class="text-sm text-[var(--muted)]/90 mb-6">
+          We'd love to hear from you! Whether you’re looking for product details, custom orders, or wholesale queries — our team is always ready to assist.
+        </p>
+
+        <div class="space-y-4 text-sm text-[var(--muted)]/90">
+          <div>
+            <p class="font-semibold text-[var(--teal)]">Email</p>
+            <a href="mailto:hello@lushlayers.com" class="hover:underline">hello@lushlayers.com</a>
+          </div>
+          <div>
+            <p class="font-semibold text-[var(--teal)]">Phone</p>
+            <a href="tel:+91 8790333399" class="hover:underline block">8790333399</a>
+            <a href="tel:+91 9133293399" class="hover:underline block">9133293399</a>
+          </div>
+          <div>
+            <p class="font-semibold text-[var(--teal)]">Address</p>
+            <p>12-1-508/B/50/C Sripuri Colony, Hyderabad -40</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div>
+        <h3 class="text-2xl font-semibold text-[var(--teal)] mb-4">Send us a Message</h3>
+                <form id="contactForm" class="bg-white rounded-xl p-6 shadow-lg border border-[rgba(0,0,0,0.03)]">
+            <!-- Name & Contact Number (side by side) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <input type="text" name="name" placeholder="Your Name" required
+                class="px-4 py-3 rounded-md border border-[rgba(0,0,0,0.08)] focus:ring-2 focus:ring-[var(--gold)]/40 text-sm">
+              <input type="tel" name="phone" placeholder="Contact Number" required
+                class="px-4 py-3 rounded-md border border-[rgba(0,0,0,0.08)] focus:ring-2 focus:ring-[var(--gold)]/40 text-sm">
+            </div>
+
+            <!-- Email (full width like message) -->
+            <input type="email" name="email" placeholder="Email Address" required
+              class="w-full px-4 py-3 rounded-md border border-[rgba(0,0,0,0.08)] focus:ring-2 focus:ring-[var(--gold)]/40 text-sm mb-4">
+            <!-- Message -->
+            <textarea name="message" rows="5" placeholder="Write something..."
+              class="w-full px-4 py-3 rounded-md border border-[rgba(0,0,0,0.08)] text-sm focus:ring-2 focus:ring-[var(--gold)]/40 mb-4"></textarea>
+
+            <!-- Submit -->
+            <button type="submit"
+              class="w-full py-3 rounded-md text-white font-semibold text-sm bg-[var(--teal)] hover:bg-[var(--gold)] transition">
+              Send Message
+            </button>
+          </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER (from index.html) ================= -->
+  <footer class="bg-[linear-gradient(180deg,#063735,#072e2d)] text-white pt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Footer Columns -->
+      <div class="grid md:grid-cols-4 gap-8 mt-10">
+        <!-- Brand -->
+        <div>
+          <h4 class="text-lg font-bold mb-2">Lush Layers</h4>
+          <p class="text-sm text-white/80 mb-4">To redefine sleep comfort through thoughtful layering, sustainable materials, and lasting quality — creating products that support better rest and healthier living.</p>
+        </div>
+
+        <!-- About -->
+        <div>
+          <h5 class="font-semibold mb-3">Navigation</h5>
+          <ul class="space-y-2 text-sm text-white/80">
+            <li><a href="#home" class="hover:text-white">Home</a></li>
+            <li><a href="#about" class="hover:text-white">About</a></li>
+            <li><a href="#collections" class="hover:text-white">Collections</a></li>
+            <li><a href="#contact" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h5 class="font-semibold mb-3">Services</h5>
+          <ul class="space-y-2 text-sm text-white/80">
+            <li>Retail & Wholesale</li>
+            <li>Corporate Supply</li>
+            <li>Bulk Orders</li>
+          </ul>
+        </div>
+
+        <!-- Contact + Map -->
+        <div>
+          <h5 class="font-semibold mb-3">Contact</h5>
+          <p class="text-sm text-white/80 mb-2">hello@lushlayers.com</p>
+          <p class="text-sm text-white/80 mb-3">+91 8790333399<br>+91 9133293399</p>
+          <p class="text-sm text-white/80 mb-3">Registered Office: Ground Floor, Chunduru & Co.Ayinabathina Vari Veedhi Ongole -01</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.005382569005!2d80.0421218!3d15.5120268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4b01076170231b%3A0x3a4477cacc32b022!2sChunduru%20%26%20Co.!5e0!3m2!1sen!2sin!4v1730890000000!5m2!1sen!2sin"
+            class="w-full h-28 rounded-md border-0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="mt-10 border-t border-white/10 pt-6 text-xs text-white/60 flex flex-col sm:flex-row justify-between items-center">
+        <p>Created & Developed by <b>Tattvo Tech</b></p>
+        <p>© <span id="year"></span> Lush Layers — Crafted with care.</p>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- Inline JS: mobile toggle + carousel + small fixes (from index.html) -->
+<script>
+  (function () {
+    /* --- Simple carousel (auto-play + arrows) --- */
+    const carousel = document.querySelector('.carousel');
+    if (carousel) {
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const prevBtn = carousel.querySelector('.carousel-arrow.left');
+      const nextBtn = carousel.querySelector('.carousel-arrow.right');
+      let idx = slides.findIndex(s => s.classList.contains('active'));
+      if (idx < 0) idx = 0;
+
+      function showSlide(n) {
+        slides.forEach((s, i) => {
+          s.classList.toggle('active', i === n);
+          // ensure only the active slide is visible (tailwind classes assumed; fallback)
+          if (i === n) {
+            s.style.display = '';
+            s.setAttribute('aria-hidden', 'false');
+          } else {
+            s.style.display = 'none';
+            s.setAttribute('aria-hidden', 'true');
+          }
+        });
+      }
+
+      showSlide(idx);
+
+      function next() {
+        idx = (idx + 1) % slides.length;
+        showSlide(idx);
+      }
+      function prev() {
+        idx = (idx - 1 + slides.length) % slides.length;
+        showSlide(idx);
+      }
+
+      let autoplay = setInterval(next, 3500);
+
+      // arrow handlers
+      if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetAutoplay(); });
+      if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetAutoplay(); });
+
+      // pause on hover/focus
+      carousel.addEventListener('mouseenter', () => clearInterval(autoplay));
+      carousel.addEventListener('mouseleave', () => autoplay = setInterval(next, 3500));
+      carousel.addEventListener('focusin', () => clearInterval(autoplay));
+      carousel.addEventListener('focusout', () => autoplay = setInterval(next, 3500));
+
+      function resetAutoplay() {
+        clearInterval(autoplay);
+        autoplay = setInterval(next, 3500);
+      }
+    }
+
+    /* --- small util: set current year in footer --- */
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  })();
+</script>
+
+<!-- If you still use app.js, keep it — this script is intentionally lightweight and won't interfere in most setups -->
+<script src="app.js"></script>
+</body>
+</html>
